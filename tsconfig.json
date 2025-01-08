@@ -15,6 +15,12 @@
     "emitDeclarationOnly": true,
     "resolveJsonModule": true,
     "noImplicitAny": false,
+
+    "ts-node": {
+      "esm": true,
+      "experimentalSpecifiers": true
+    },
+
     "allowJs": true,
     "checkJs": false,
     "noEmitOnError": false,
