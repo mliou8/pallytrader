@@ -44,7 +44,7 @@ const App: React.FC = () => {
 
       {/* Button */}
       <div className="mt-10">
-        <button onClick={login} className="flex items-center space-x-2 px-6 py-3 bg-blue-500 text-black text-lg font-medium rounded-full hover:bg-green-400 transition shadow-lg">
+        <button onClick={login} className="flex items-center space-x-2 px-6 py-3 bg-white text-black text-lg font-medium rounded-full hover:bg-green-400 transition shadow-lg">
           <span>Launch App</span>
           <span>&rarr;</span>
         </button>

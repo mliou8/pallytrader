@@ -4,7 +4,7 @@ import Pally from "../assets/Pally.png";
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 bg-[#1E293B] p-6 text-white h-screen">
+    <aside className="w-64 bg-[#0a2044] p-6 text-white h-screen">
       {/* User Profile Section */}
       <div className="flex items-center space-x-3">
         <img src={Pally} alt="Logo" className="h-30 w-auto" />
