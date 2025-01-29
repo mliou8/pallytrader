@@ -1,11 +1,26 @@
+import { usePrivy } from "@privy-io/react-auth";
 import React from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Pally from "./assets/Pally.png";
 
 const App: React.FC = () => {
+
+  const { login, authenticated } = usePrivy();
+  const navigate = useNavigate();
+
+  // Redirect to dashboard if already authenticated
+  useEffect(() => {
+    if (authenticated) {
+      navigate("/dashboard");
+    }
+  }, [authenticated, navigate]);
+
   return (
     <div className="min-h-screen flex flex-col justify-center items-center text-white font-sans">
       {/* Logo */}
       <div className="absolute top-5 left-5">
-        <div className="w-8 h-8 rounded-full bg-[#034483]"></div>
+      <img src={Pally} alt="Logo" className="h-10 w-auto" />
       </div>
 
       {/* Header Button */}
@@ -27,7 +42,7 @@ const App: React.FC = () => {
 
       {/* Button */}
       <div className="mt-10">
-        <button className="flex items-center space-x-2 px-6 py-3 bg-blue-500 text-black text-lg font-medium rounded-full hover:bg-green-400 transition shadow-lg">
+        <button onClick={login} className="flex items-center space-x-2 px-6 py-3 bg-blue-500 text-black text-lg font-medium rounded-full hover:bg-green-400 transition shadow-lg">
           <span>Launch App</span>
           <span>&rarr;</span>
         </button>
