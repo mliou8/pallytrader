@@ -3,6 +3,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Pally from "./assets/Pally.png";
+import './index.css'
+ 
 
 const App: React.FC = () => {
 
@@ -17,7 +19,7 @@ const App: React.FC = () => {
   }, [authenticated, navigate]);
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-white font-sans">
+    <div className="homebg min-h-screen flex flex-col justify-center items-center text-white font-sans">
       {/* Logo */}
       <div className="absolute top-5 left-5">
       <img src={Pally} alt="Logo" className="h-10 w-auto" />
