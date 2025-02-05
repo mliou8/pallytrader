@@ -1,0 +1,5 @@
+run = "npm run start"
+modules = ["python-3.11"]
+
+[deployment]
+run = ["sh", "-c", "npm run start"]
