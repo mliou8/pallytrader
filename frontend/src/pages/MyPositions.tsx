@@ -20,9 +20,9 @@ const Profile = () => {
     const keypair = Keypair.generate();
     const newWallet = {
       address: keypair.publicKey.toBase58(),
-      secretKey: Array.from(keypair.secretKey), // Save as array to store safely
+      secretKey: new Uint8Array(keypair.secretKey), // Convert to Uint8Array
     };
-    
+
     setWallet(newWallet);
     localStorage.setItem("solana_wallet", JSON.stringify(newWallet));
   };
