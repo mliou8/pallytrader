@@ -7,7 +7,7 @@ import Providers from './providers/PrivyProvider.tsx';
 import Dashboard from './pages/Dashboard.tsx';
 import ProtectedRoute from './utils/ProtectedRoute.tsx';
 import MyPositions from './pages/MyPositions.tsx';
-import PallyReports from './pages/PallyReports.tsx';
+import PallyReports from './pages/Assistant.tsx';
 import Profile from './pages/Profile.tsx';
 import Referrals from './pages/Referrals.tsx';
 import TrackWallets from './pages/TrackWallets.tsx';
