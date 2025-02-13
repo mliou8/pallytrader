@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 
 const Dashboard = () => {
   return (
-    <div className="flex h-screen text-white">
+    <div className="flex h-screen bg-[#09090b] text-white">
       <Sidebar />
 
       {/* Main content area where routes will change dynamically */}

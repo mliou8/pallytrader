@@ -3,11 +3,9 @@ import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Pally from "./assets/Pally.png";
-import './index.css'
- 
+import './index.css';
 
 const App: React.FC = () => {
-
   const { login, authenticated } = usePrivy();
   const navigate = useNavigate();
 
@@ -19,33 +17,36 @@ const App: React.FC = () => {
   }, [authenticated, navigate]);
 
   return (
-    <div className="homebg min-h-screen flex flex-col justify-center items-center text-white font-sans">
+    <div className="min-h-screen flex flex-col justify-center items-center text-white font-sans bg-gradient-to-br from-[#111111] to-[#1A1A1A]">
       {/* Logo */}
       <div className="absolute top-5 left-5">
-      <img src={Pally} alt="Logo" className="h-10 w-auto" />
+        <img src={Pally} alt="Logo" className="h-12 w-auto" />
       </div>
 
       {/* Header Button */}
       <div className="absolute top-5 right-5">
-        <button className="px-4 py-2 text-sm font-medium bg-white text-black rounded-full shadow-lg hover:bg-gray-200 transition">
+        <button className="px-6 py-2 text-sm font-medium bg-gradient-to-r from-[#6200EE] to-[#BB86FC] text-white rounded-full shadow-lg hover:opacity-90 transition-opacity">
           Link Telegram
         </button>
       </div>
 
       {/* Content */}
       <div className="text-center space-y-6 px-4 max-w-[700px]">
-        <h1 className="text-[28px] sm:text-[14px] font-bold">
-          Welcome to Pally Traders
+        <h1 className="text-5xl sm:text-4xl font-bold bg-gradient-to-r from-[#BB86FC] to-[#03DAC6] bg-clip-text text-transparent">
+          Pally Trading Assistant
         </h1>
         <p className="text-lg text-gray-300">
-          This bot will help you to become a better trader. It will identify some of the mistakes that you tend to make repetitively and give you some advice to avoid making those mistakes again in the future.
+          This bot will help you become a better trader. It identifies repetitive mistakes and provides actionable advice to help you avoid them in the future.
         </p>
       </div>
 
       {/* Button */}
       <div className="mt-10">
-        <button onClick={login} className="flex items-center space-x-2 px-6 py-3 bg-white text-black text-lg font-medium rounded-full hover:bg-green-400 transition shadow-lg">
-          <span>Launch App</span>
+        <button
+          onClick={login}
+          className="flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-[#6200EE] to-[#BB86FC] text-white text-lg font-medium rounded-full hover:opacity-90 transition-opacity shadow-lg"
+        >
+          <span>View your portfolio</span>
           <span>&rarr;</span>
         </button>
       </div>
@@ -56,7 +57,7 @@ const App: React.FC = () => {
           href="https://twitter.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white hover:text-green-300 transition"
+          className="text-white hover:text-[#BB86FC] transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
