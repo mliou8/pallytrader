@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Pally from "./assets/Pally.png";
-import './index.css';
+import "./index.css";
 
 const App: React.FC = () => {
   const { login, authenticated } = usePrivy();
@@ -36,7 +36,9 @@ const App: React.FC = () => {
           Pally Trading Assistant
         </h1>
         <p className="text-lg text-gray-300">
-          This bot will help you become a better trader. It identifies repetitive mistakes and provides actionable advice to help you avoid them in the future.
+          This bot will help you become a better trader. It identifies
+          repetitive mistakes and provides actionable advice to help you avoid
+          them in the future.
         </p>
       </div>
 
@@ -46,6 +48,8 @@ const App: React.FC = () => {
           onClick={login}
           className="flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-[#6200EE] to-[#BB86FC] text-white text-lg font-medium rounded-full hover:opacity-90 transition-opacity shadow-lg"
         >
+          <span>Launch App</span>
+
           <span>View your portfolio</span>
           <span>&rarr;</span>
         </button>

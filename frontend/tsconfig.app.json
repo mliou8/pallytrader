@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "react-jsx",  // Ensure this line is present to enable JSX support
 
     /* Linting */
     "strict": true,

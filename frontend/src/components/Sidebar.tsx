@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
-import { AppWindow, Calendar, Wallet, UserRoundPlus, UserRound } from "lucide-react";
+import {
+  AppWindow,
+  Calendar,
+  Wallet,
+  UserRoundPlus,
+  UserRound,
+} from "lucide-react";
 import Pally from "../assets/Pally.png";
 
 const Sidebar = () => {
@@ -17,22 +23,15 @@ const Sidebar = () => {
           className="flex items-center p-3 rounded-lg hover:bg-[#333333] transition-colors duration-200"
         >
           <AppWindow size={20} className="mr-3 text-[#BB86FC]" />
-          <span className="text-sm font-medium">My Portfolio</span>
+          <span className="text-sm font-medium">AI Trader</span>
         </Link>
-        <Link
+        {/* <Link
           to="/dashboard/pallyreports"
           className="flex items-center p-3 rounded-lg hover:bg-[#333333] transition-colors duration-200"
         >
           <Calendar size={20} className="mr-3 text-[#03DAC6]" />
           <span className="text-sm font-medium">Get Insights</span>
-        </Link>
-        <Link
-          to="/dashboard/trackwallets"
-          className="flex items-center p-3 rounded-lg hover:bg-[#333333] transition-colors duration-200"
-        >
-          <Wallet size={20} className="mr-3 text-[#FFA726]" />
-          <span className="text-sm font-medium">Track Wallets</span>
-        </Link>
+        </Link> */}
         <Link
           to="/dashboard/profile"
           className="flex items-center p-3 rounded-lg hover:bg-[#333333] transition-colors duration-200"
@@ -41,12 +40,20 @@ const Sidebar = () => {
           <span className="text-sm font-medium">Profile</span>
         </Link>
         <Link
+          to="/dashboard/settings"
+          className="flex items-center p-3 rounded-lg hover:bg-[#333333] transition-colors duration-200"
+        >
+          <Wallet size={20} className="mr-3 text-[#FFA726]" />
+          <span className="text-sm font-medium">Settings</span>
+        </Link>
+
+        {/* <Link
           to="/dashboard/referrals"
           className="flex items-center p-3 rounded-lg hover:bg-[#333333] transition-colors duration-200"
         >
           <UserRoundPlus size={20} className="mr-3 text-[#00BFA5]" />
           <span className="text-sm font-medium">Referrals</span>
-        </Link>
+        </Link> */}
       </nav>
 
       {/* Footer Section (Optional) */}

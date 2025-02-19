@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Keypair, PublicKey } from "@solana/web3.js";
 import { Copy, Download } from "lucide-react";
-import '../index.css';
+import "../index.css";
 import Positions from "./Positions";
 
 const Profile = () => {
-  const [wallet, setWallet] = useState<{ address: string; secretKey: Uint8Array } | null>(null);
+  const [wallet, setWallet] = useState<{
+    address: string;
+    secretKey: Uint8Array;
+  } | null>(null);
 
   useEffect(() => {
     // Check if the wallet is saved in localStorage or already connected via browser extension (e.g., Phantom)
@@ -14,17 +17,20 @@ const Profile = () => {
       setWallet(JSON.parse(savedWallet));
     } else if (window.solana) {
       // If a wallet extension is available, try connecting automatically
-      window.solana.connect().then((response) => {
-        const walletAddress = response.publicKey.toBase58();
-        const newWallet = {
-          address: walletAddress,
-          secretKey: [], // Cannot access the private key from wallet extension
-        };
-        setWallet(newWallet);
-        localStorage.setItem("solana_wallet", JSON.stringify(newWallet));
-      }).catch((error) => {
-        console.log("Failed to auto-connect wallet:", error);
-      });
+      window.solana
+        .connect()
+        .then((response) => {
+          const walletAddress = response.publicKey.toBase58();
+          const newWallet = {
+            address: walletAddress,
+            secretKey: [], // Cannot access the private key from wallet extension
+          };
+          setWallet(newWallet);
+          localStorage.setItem("solana_wallet", JSON.stringify(newWallet));
+        })
+        .catch((error) => {
+          console.log("Failed to auto-connect wallet:", error);
+        });
     }
   }, []);
 
@@ -34,7 +40,7 @@ const Profile = () => {
       address: keypair.publicKey.toBase58(),
       secretKey: Array.from(keypair.secretKey),
     };
-    
+
     setWallet(newWallet);
     localStorage.setItem("solana_wallet", JSON.stringify(newWallet));
   };
@@ -49,7 +55,7 @@ const Profile = () => {
           address: keypair.publicKey.toBase58(),
           secretKey: Array.from(keypair.secretKey),
         };
-        
+
         setWallet(importedWallet);
         localStorage.setItem("solana_wallet", JSON.stringify(importedWallet));
         alert("Wallet imported successfully!");
@@ -68,7 +74,7 @@ const Profile = () => {
           address: walletAddress,
           secretKey: [], // Cannot access the private key of the connected wallet
         };
-        
+
         setWallet(newWallet);
         localStorage.setItem("solana_wallet", JSON.stringify(newWallet));
         alert("Wallet connected successfully!");
@@ -89,7 +95,9 @@ const Profile = () => {
 
   const downloadPrivateKey = () => {
     if (wallet) {
-      const blob = new Blob([JSON.stringify(wallet.secretKey)], { type: "application/json" });
+      const blob = new Blob([JSON.stringify(wallet.secretKey)], {
+        type: "application/json",
+      });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
@@ -134,30 +142,30 @@ const Profile = () => {
         )}
       </div>
       <div className="p-6">
-      {wallet ? (
-        <div className="bg-gradient-to-r from-[#6200EE] to-[#BB86FC] p-6 rounded-lg shadow-md mb-6">
-          <h1 className="text-2xl font-bold">Solana Wallet</h1>
-          <p className="text-sm text-[#CCCCCC]">Address: {wallet.address}</p>
-          <div className="flex gap-2 mt-4">
-          <button
-              onClick={copyToClipboard}
-              className="bg-gradient-to-r from-[#6200EE] to-[#BB86FC] text-white flex items-center px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
-            >
-              <Copy size={18} className="mr-2" />
-              Copy Address
-            </button>
-            <button
-              onClick={downloadPrivateKey}
-              className="bg-gradient-to-r from-[#03DAC6] to-[#00BFA5] text-black flex items-center px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
-            >
-              <Download size={18} className="mr-2" />
-              Export Key
-            </button>
-        </div>
-        </div>
-      ) : (
-        <p className="text-gray-400">No wallet connected.</p>
-      )}
+        {wallet ? (
+          <div className="bg-gradient-to-r from-[#6200EE] to-[#BB86FC] p-6 rounded-lg shadow-md mb-6">
+            <h1 className="text-2xl font-bold">Solana Wallet</h1>
+            <p className="text-sm text-[#CCCCCC]">Address: {wallet.address}</p>
+            <div className="flex gap-2 mt-4">
+              <button
+                onClick={copyToClipboard}
+                className="bg-gradient-to-r from-[#6200EE] to-[#BB86FC] text-white flex items-center px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
+              >
+                <Copy size={18} className="mr-2" />
+                Copy Address
+              </button>
+              <button
+                onClick={downloadPrivateKey}
+                className="bg-gradient-to-r from-[#03DAC6] to-[#00BFA5] text-black flex items-center px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
+              >
+                <Download size={18} className="mr-2" />
+                Export Key
+              </button>
+            </div>
+          </div>
+        ) : (
+          <p className="text-gray-400">No wallet connected.</p>
+        )}
       </div>
 
       {/* Positions Component */}
