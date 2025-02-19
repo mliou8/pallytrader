@@ -15,7 +15,7 @@ import MyPositions from "./pages/MyPositions.tsx";
 import PallyReports from "./pages/Assistant.tsx";
 import Profile from "./pages/Profile.tsx";
 import Referrals from "./pages/Referrals.tsx";
-import TrackWallets from "./pages/TrackWallets.tsx";
+import Settings from "./pages/Settings.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -36,7 +36,7 @@ createRoot(document.getElementById("root")!).render(
             <Route index element={<MyPositions />} /> {/* Default page */}
             <Route path="mypositions" element={<MyPositions />} />
             <Route path="pallyreports" element={<PallyReports />} />
-            <Route path="trackwallets" element={<TrackWallets />} />
+            <Route path="settings" element={<Settings />} />
             <Route path="profile" element={<Profile />} />
             {/* <Route path="referrals" element={<Referrals />} /> */}
           </Route>

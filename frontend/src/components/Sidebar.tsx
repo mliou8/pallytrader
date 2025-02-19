@@ -40,7 +40,7 @@ const Sidebar = () => {
           <span className="text-sm font-medium">Profile</span>
         </Link>
         <Link
-          to="/dashboard/trackwallets"
+          to="/dashboard/settings"
           className="flex items-center p-3 rounded-lg hover:bg-[#333333] transition-colors duration-200"
         >
           <Wallet size={20} className="mr-3 text-[#FFA726]" />
