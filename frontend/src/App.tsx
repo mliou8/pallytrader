@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Pally from "./assets/Pally.png";
-import './index.css';
+import "./index.css";
 
 const App: React.FC = () => {
   const { login, authenticated } = usePrivy();
@@ -20,7 +20,7 @@ const App: React.FC = () => {
     <div className="min-h-screen flex flex-col justify-center items-center text-white font-sans bg-gradient-to-br from-[#111111] to-[#1A1A1A]">
       {/* Logo */}
       <div className="absolute top-5 left-5">
-        <img src={Pally} alt="Logo" className="h-12 w-auto"/>
+        <img src={Pally} alt="Logo" className="h-12 w-auto" />
       </div>
 
       {/* Header Button */}
@@ -36,13 +36,9 @@ const App: React.FC = () => {
           Pally Trading Assistant
         </h1>
         <p className="text-lg text-gray-300">
-<<<<<<< HEAD
-          This bot will help you to become a better trader. It will identify
-          some of the mistakes that you tend to make repetitively and give you
-          some advice to avoid making those mistakes again in the future.
-=======
-          This bot will help you become a better trader. It identifies repetitive mistakes and provides actionable advice to help you avoid them in the future.
->>>>>>> main
+          This bot will help you become a better trader. It identifies
+          repetitive mistakes and provides actionable advice to help you avoid
+          them in the future.
         </p>
       </div>
 
@@ -50,15 +46,11 @@ const App: React.FC = () => {
       <div className="mt-10">
         <button
           onClick={login}
-<<<<<<< HEAD
-          className="flex items-center space-x-2 px-6 py-3 bg-white text-black text-lg font-medium rounded-full hover:bg-green-400 transition shadow-lg"
-        >
-          <span>Launch App</span>
-=======
           className="flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-[#6200EE] to-[#BB86FC] text-white text-lg font-medium rounded-full hover:opacity-90 transition-opacity shadow-lg"
         >
+          <span>Launch App</span>
+
           <span>View your portfolio</span>
->>>>>>> main
           <span>&rarr;</span>
         </button>
       </div>
